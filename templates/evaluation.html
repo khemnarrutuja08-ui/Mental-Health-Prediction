@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Evaluation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(-45deg, #4e73df, #9b59b6, #1cc88a, #36b9cc);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-container {
+            width: 95%;
+            max-width: 1200px;
+            background: rgba(232, 223, 229, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(20, 19, 19, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #942c13;
+            font-size: 28px;
+        }
+
+        .medical-icon {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #9b59b6;
+            outline: none;
+            box-shadow: 0 0 5px #9b59b6;
+        }
+
+        .full-width {
+            grid-column: span 3;
+        }
+
+        button {
+            grid-column: span 3;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(to right, #4e73df, #9b59b6);
+            color: rgb(12, 13, 13);
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        /* Floating medical animation */
+        .pulse {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: pulse 6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.6; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="pulse" style="top:10%; left:5%;"></div>
+<div class="pulse" style="bottom:10%; right:5%;"></div>
+
+<div class="main-container">
+    <div class="medical-icon">🏥🧠</div>
+    <h2>Mental Health Evaluation Form</h2>
+
+    <form action="/predict" method="POST">
+
+        <div>
+            <label>Age</label>
+            <input type="number" name="age" required>
+        </div>
+
+        <div>
+            <label>Stress Level</label>
+            <input type="number" name="stress_level" required>
+        </div>
+
+        <div>
+            <label>Sleep Hours</label>
+            <input type="number" name="sleep_hours" required>
+        </div>
+
+        <div>
+            <label>Physical Activity Days</label>
+            <input type="number" name="physical_activity_days" required>
+        </div>
+
+        <div>
+            <label>Depression Score</label>
+            <input type="number" name="depression_score" required>
+        </div>
+
+        <div>
+            <label>Anxiety Score</label>
+            <input type="number" name="anxiety_score" required>
+        </div>
+
+        <div>
+            <label>Social Support Score</label>
+            <input type="number" name="social_support_score" required>
+        </div>
+
+        <div>
+            <label>Productivity Score</label>
+            <input type="number" name="productivity_score" required>
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Employment Status</label>
+            <select name="employment_status">
+                <option>Employed</option>
+                <option>Unemployed</option>
+                <option>Student</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Work Environment</label>
+            <select name="work_environment">
+                <option>Remote</option>
+                <option>Onsite</option>
+                <option>Hybrid</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Mental Health History</label>
+            <select name="mental_health_history">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Seeks Treatment</label>
+            <select name="seeks_treatment">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Mental Health Risk</button>
+
+    </form>
+</div>
+
+</body>
+</html>

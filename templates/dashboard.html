@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="result-box">
+    <h2>🧠 Mental Health Result</h2>
+
+    <div class="circle">
+        {{ risk_percent }}%
+    </div>
+
+    <div class="risk">
+        {{ prediction_text }}
+    </div>
+
+    <div class="bar-container">
+        <div class="bar" id="riskBar"></div>
+    </div>
+
+    <a href="/evaluation">Evaluate Again</a>
+</div>
+
+<script>
+    window.onload = function() {
+        document.getElementById("riskBar").style.width = "{{ risk_percent }}%";
+    };
+</script>
+
+</body>
+</html>

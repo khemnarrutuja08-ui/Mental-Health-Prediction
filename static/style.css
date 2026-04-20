@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #4e73df, #9b59b6, #1cc88a, #36b9cc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.result-box {
+    background: rgba(209, 233, 177, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.result-box h2 {
+    color: #c84c12;
+}
+
+.risk {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.bar-container {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 25px;
+}
+
+.bar {
+    height: 25px;
+    width: 0;
+    border-radius: 20px;
+    background: linear-gradient(to right, green, yellow, red);
+    transition: width 2s ease-in-out;
+}
+
+.circle {
+    margin: 20px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #12b32d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: #0f027f;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #4e73df;
+}
+
+/* Form Pages */
+
+.form-container {
+    background: rgb(182, 244, 247);
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;   /* THIS MAKES IT VERTICAL */
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #b6c6c5;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2142ac;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #182e73;
+}
+
+.link {
+    margin-top: 15px;
+    text-align: center;
+}
+/* ========================= */
+/* INPUT FOCUS EFFECT (ALL PAGES) */
+/* ========================= */
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #899b8f;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+input:focus, select:focus {
+    border-color: #9b59b6;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.6);
+    transform: scale(1.03);
+}
+
+/* Optional Hover Effect */
+input:hover, select:hover {
+    border-color: #4e73df;
+}
