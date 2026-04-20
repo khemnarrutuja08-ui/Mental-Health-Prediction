@@ -47,9 +47,6 @@ Mental-Health-Prediction/
 
 ---
 
-
----
-
 ## ⚙️ How to Run
 
 ### 1. Install dependencies
@@ -61,9 +58,6 @@ pip install -r requirements.txt
 python app.py
 
 ---
-
----
-
 ## 🧠 Model Details
 - Algorithm: Logistic Regression  
 - Type: Machine Learning (Classification)  
